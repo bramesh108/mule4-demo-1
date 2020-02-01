@@ -1,0 +1,30 @@
+#%RAML 1.0
+title: customer-api
+baseUri: http://localhost:8081/api
+protocols: [HTTP]
+
+types: 
+  sCustomerCode:
+    type: !include CustomerCodesDataType.raml
+  sItems:
+    type: !include ItemsDataType.raml 
+
+/test:
+  post:
+    body: 
+      application/json:
+        properties: 
+          OrderHeader: 
+            type: !include orderHeaderDataType.raml
+            properties:
+              CustomerCodes:
+                properties: 
+                  item: sCustomerCode[]                
+              items:
+                properties: 
+                  item: sItems[]
+    responses: 
+      200:
+        body: 
+          application/json:
+            
