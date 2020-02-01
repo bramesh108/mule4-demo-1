@@ -64,7 +64,7 @@ output application/json
 {message: "Not acceptable"}]]></ee:set-payload>
                     </ee:message>
                     <ee:variables>
-                        <ee:set-variable variableName="httpStatus">406</ee:set-variable>
+                        <ee:set-variable variableName="httpStatus">416</ee:set-variable>
                     </ee:variables>
                 </ee:transform>
             </on-error-propagate>
